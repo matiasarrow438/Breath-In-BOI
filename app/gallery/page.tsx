@@ -85,8 +85,7 @@ export default function Gallery() {
               {memes.map((meme) => (
                 <div 
                   key={meme.id}
-                  className="bg-gray-900 rounded-lg p-2 hover:bg-gray-800 transition-colors cursor-pointer"
-                  onClick={() => setSelectedMeme(meme.id)}
+                  className="bg-gray-900 rounded-lg p-2"
                 >
                   <img 
                     src={meme.image} 
