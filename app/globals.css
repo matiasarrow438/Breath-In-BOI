@@ -79,6 +79,38 @@
              1px 0px 0px #000,
              -1px 0px 0px #000;
          }
+         
+         .click-anywhere-text {
+           text-shadow: 
+             2px 2px 0px #000,
+             -2px -2px 0px #000,
+             2px -2px 0px #000,
+             -2px 2px 0px #000,
+             0px 2px 0px #000,
+             0px -2px 0px #000,
+             2px 0px 0px #000,
+             -2px 0px 0px #000,
+             3px 3px 0px #000,
+             -3px -3px 0px #000,
+             3px -3px 0px #000,
+             -3px 3px 0px #000,
+             0px 3px 0px #000,
+             0px -3px 0px #000,
+             3px 0px 0px #000,
+             -3px 0px 0px #000;
+           animation: breathe 2s ease-in-out infinite;
+         }
+         
+         @keyframes breathe {
+           0%, 100% { 
+             transform: scale(1); 
+             opacity: 1;
+           }
+           50% { 
+             transform: scale(1.05); 
+             opacity: 0.8;
+           }
+         }
   
            @keyframes bubbleFloat {
            0%, 100% { 

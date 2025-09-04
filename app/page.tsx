@@ -10,6 +10,7 @@ export default function Home() {
   const [soundIndex, setSoundIndex] = useState(0)
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null)
   const [showTikTokPopup, setShowTikTokPopup] = useState(false)
+  const [clickCount, setClickCount] = useState(0)
 
   const contractAddress = "CA"
   const soundEffects = ['/soundeffects/boom.mp3', '/soundeffects/BOI.m4a']
@@ -47,6 +48,7 @@ export default function Home() {
     }
     
     setDeployedGifs(prev => [...prev, newGif])
+    setClickCount(prev => prev + 1)
     
     // Stop current audio if playing
     if (currentAudio) {
@@ -98,6 +100,17 @@ export default function Home() {
                  </div>
                </div>
              )}
+
+             {/* Gallery Button */}
+             <div className="fixed top-4 left-4 z-50">
+               <a 
+                 href="/gallery"
+                 className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors shadow-lg"
+                 style={{ backgroundColor: '#fbbf24' }}
+               >
+                 Gallery
+               </a>
+             </div>
 
              <main 
                className="min-h-screen flex flex-col items-center justify-center p-4 cursor-pointer relative select-none"
@@ -155,8 +168,8 @@ export default function Home() {
                      Breath in boi started as a Spongebob meme that was so stupid it was funny. 
                      People never forgot it and they never will.
                    </p>
-            <p className="text-sm text-black">
-              [click anywhere]
+            <p className={`font-bold mb-8 click-anywhere-text ${clickCount >= 10 ? 'text-sm md:text-base' : 'text-lg md:text-xl'}`} style={{ color: '#fbbf24' }}>
+              [CLICK ANYWHERE]
             </p>
           </div>
 
@@ -165,7 +178,7 @@ export default function Home() {
         {/* Contract Info */}
         <div className="max-w-2xl w-full text-center">
           <div 
-            className="p-4 rounded-lg font-mono text-sm break-all cursor-pointer transition-colors"
+            className="p-4 rounded-2xl font-mono text-sm break-all cursor-pointer transition-colors"
             style={{ backgroundColor: '#fbbf24', color: '#000' }}
             onClick={(e) => {
               e.stopPropagation()
@@ -187,7 +200,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
           >
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-400">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-black">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
