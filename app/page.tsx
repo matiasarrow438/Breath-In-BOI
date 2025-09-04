@@ -7,8 +7,11 @@ export default function Home() {
   const [deployedGifs, setDeployedGifs] = useState<Array<{id: number, x: number, y: number}>>([])
   const [gifKey, setGifKey] = useState(0)
   const [contractCopied, setContractCopied] = useState(false)
+  const [soundIndex, setSoundIndex] = useState(0)
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null)
 
   const contractAddress = "CA"
+  const soundEffects = ['/soundeffects/boom.mp3', '/soundeffects/BOI.m4a']
 
   // Force GIFs to reload and sync
   useEffect(() => {
@@ -30,6 +33,24 @@ export default function Home() {
     }
     
     setDeployedGifs(prev => [...prev, newGif])
+    
+    // Stop current audio if playing
+    if (currentAudio) {
+      currentAudio.pause()
+      currentAudio.currentTime = 0
+    }
+    
+    // Play new alternating sound effect
+    const audio = new Audio(soundEffects[soundIndex])
+    audio.volume = 0.3
+    setCurrentAudio(audio)
+    
+    audio.play().catch(() => {
+      // Ignore errors if audio can't play (user hasn't interacted yet)
+    })
+    
+    // Alternate to next sound
+    setSoundIndex(prev => (prev + 1) % soundEffects.length)
   }
 
   const copyContract = async () => {
