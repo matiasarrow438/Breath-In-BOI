@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>BREATHINBOI - The Ultimate Spongebob Memecoin</title>
+        <title>Breath in Boi</title>
         <meta name="description" content="breath in boi - The most legendary memecoin inspired by Spongebob Squarepants" />
       </Head>
 
