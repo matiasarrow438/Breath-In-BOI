@@ -9,6 +9,7 @@ export default function Home() {
   const [contractCopied, setContractCopied] = useState(false)
   const [soundIndex, setSoundIndex] = useState(0)
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null)
+  const [showTikTokPopup, setShowTikTokPopup] = useState(false)
 
   const contractAddress = "CA"
   const soundEffects = ['/soundeffects/boom.mp3', '/soundeffects/BOI.m4a']
@@ -18,6 +19,19 @@ export default function Home() {
     const timer = setTimeout(() => {
       setGifKey(prev => prev + 1)
     }, 100)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Show TikTok popup randomly after 3-8 seconds
+  useEffect(() => {
+    const randomDelay = Math.random() * 5000 + 3000 // 3-8 seconds
+    const timer = setTimeout(() => {
+      setShowTikTokPopup(true)
+      // Auto dismiss after 10 seconds
+      setTimeout(() => {
+        setShowTikTokPopup(false)
+      }, 10000)
+    }, randomDelay)
     return () => clearTimeout(timer)
   }, [])
 
@@ -71,18 +85,32 @@ export default function Home() {
         <meta name="description" content="breath in boi - The most legendary memecoin inspired by Spongebob Squarepants" />
       </Head>
 
-      <main 
-        className="min-h-screen flex flex-col items-center justify-center p-4 cursor-pointer relative select-none"
-        onClick={handleScreenClick}
-        style={{
-          WebkitUserSelect: 'none',
-          MozUserSelect: 'none',
-          msUserSelect: 'none',
-          userSelect: 'none',
-          WebkitTouchCallout: 'none',
-          WebkitTapHighlightColor: 'transparent'
-        }}
-      >
+                   {/* TikTok Popup */}
+             {showTikTokPopup && (
+               <div className="fixed top-4 right-4 left-4 sm:left-auto z-50 animate-slideInRight">
+                 <div className="bg-black bg-opacity-90 backdrop-blur-sm border border-yellow-400 p-4 sm:p-6 rounded-lg max-w-md mx-auto sm:mx-0 shadow-xl">
+                   <div className="text-yellow-100">
+                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-yellow-400">TikTok Viral</h3>
+                     <p className="text-sm sm:text-base leading-relaxed">
+                       You can't go on TikTok without seeing breath in boi memes in the comments!
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             )}
+
+             <main 
+               className="min-h-screen flex flex-col items-center justify-center p-4 cursor-pointer relative select-none"
+               onClick={handleScreenClick}
+               style={{
+                 WebkitUserSelect: 'none',
+                 MozUserSelect: 'none',
+                 msUserSelect: 'none',
+                 userSelect: 'none',
+                 WebkitTouchCallout: 'none',
+                 WebkitTapHighlightColor: 'transparent'
+               }}
+             >
         {/* Deployed GIFs */}
         {deployedGifs.map((gif) => (
           <div
@@ -123,11 +151,11 @@ export default function Home() {
                 className="w-24 h-24 cool-gif"
               />
             </h1>
-            <p className="text-lg md:text-xl text-yellow-200 max-w-2xl mx-auto mb-4">
-              Breath in boi started as a Spongebob meme that was so stupid it was funny. 
-              People never forgot it and they never will.
-            </p>
-            <p className="text-sm text-yellow-300">
+                               <p className="text-lg md:text-xl text-yellow-200 max-w-2xl mx-auto mb-4 description-outline">
+                     Breath in boi started as a Spongebob meme that was so stupid it was funny. 
+                     People never forgot it and they never will.
+                   </p>
+            <p className="text-sm text-black">
               [click anywhere]
             </p>
           </div>
@@ -137,7 +165,8 @@ export default function Home() {
         {/* Contract Info */}
         <div className="max-w-2xl w-full text-center">
           <div 
-            className="bg-yellow-900 text-yellow-100 p-4 rounded-lg font-mono text-sm break-all cursor-pointer hover:bg-yellow-800 transition-colors"
+            className="p-4 rounded-lg font-mono text-sm break-all cursor-pointer transition-colors"
+            style={{ backgroundColor: '#fbbf24', color: '#000' }}
             onClick={(e) => {
               e.stopPropagation()
               copyContract()
@@ -145,7 +174,7 @@ export default function Home() {
           >
             {contractAddress}
           </div>
-          <p className="text-yellow-300 mt-4 text-sm">
+          <p className="mt-4 text-sm" style={{ color: '#fbbf24' }}>
             {contractCopied ? "Copied!" : "Click to copy"}
           </p>
         </div>
