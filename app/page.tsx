@@ -203,7 +203,7 @@ export default function Home() {
         {/* Social Links */}
         <div className="flex gap-6 mt-8">
           <a 
-            href="https://x.com/i/communities/1963634420520513817" 
+            href="https://x.com/i/communities/1964455966180856057/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
