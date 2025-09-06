@@ -105,10 +105,18 @@ export default function Home() {
              <div className="fixed top-4 left-4 z-50">
                <a 
                  href="/gallery"
-                 className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors shadow-lg"
-                 style={{ backgroundColor: '#fbbf24' }}
+                 className="bg-gradient-to-br from-yellow-300 to-yellow-600 text-black px-6 py-3 rounded-full font-bold hover:from-yellow-200 hover:to-yellow-500 transition-all duration-300 shadow-xl hover:scale-110 flex items-center gap-3 border-2 border-yellow-800 hover:border-yellow-900 transform hover:-translate-y-1"
+                 style={{ 
+                   boxShadow: '0 8px 20px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+                 }}
                >
-                 Gallery
+                 <img 
+                   key={`gallery-gif-${gifKey}`}
+                   src={`/assets/spongebod.gif?t=${gifKey}`} 
+                   alt="Spongebob" 
+                   className="w-7 h-7 cool-gif"
+                 />
+                 <span className="text-base font-bold">Gallery</span>
                </a>
              </div>
 

@@ -58,8 +58,10 @@ export default function Gallery() {
         <div className="flex items-center justify-between p-4 border-b border-yellow-400">
           <Link 
             href="/"
-            className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-300 transition-colors"
-            style={{ backgroundColor: '#fbbf24' }}
+            className="bg-gradient-to-br from-yellow-300 to-yellow-600 text-black px-6 py-3 rounded-full font-bold hover:from-yellow-200 hover:to-yellow-500 transition-all duration-300 shadow-xl hover:scale-110 border-2 border-yellow-800 hover:border-yellow-900 transform hover:-translate-y-1"
+            style={{ 
+              boxShadow: '0 8px 20px rgba(251, 191, 36, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+            }}
           >
             ← Back to Home
           </Link>
