@@ -5,19 +5,19 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Breath in Boi',
+  title: 'Breathe in Boi',
   description: 'breath in boi - The most legendary memecoin inspired by Spongebob Squarepants. Join the community and ride the wave!',
   keywords: 'memecoin, cryptocurrency, spongebob, breath in boi, BREATHINBOI, crypto, meme',
   authors: [{ name: 'BREATHINBOI Team' }],
   openGraph: {
-    title: 'Breath in Boi',
+    title: 'Breathe in Boi',
     description: 'breath in boi - The most legendary memecoin inspired by Spongebob Squarepants',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Breath in Boi',
+    title: 'Breathe in Boi',
     description: 'breath in boi - The most legendary memecoin inspired by Spongebob Squarepants',
   },
   robots: {
