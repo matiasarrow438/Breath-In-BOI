@@ -43,6 +43,34 @@ export default function Gallery() {
       description: "The breath in boi collection grows",
       image: "/gallery/meme4.jpg",
       date: "2024"
+    },
+    {
+      id: 6,
+      title: "ByJCB",
+      description: "Community creation by JCB",
+      image: "/gallery/ByJCB.jpg",
+      date: "2024"
+    },
+    {
+      id: 7,
+      title: "ByKY",
+      description: "Community creation by KY",
+      image: "/gallery/ByKY.jpg",
+      date: "2024"
+    },
+    {
+      id: 8,
+      title: "BYSevro",
+      description: "Community creation by Sevro",
+      image: "/gallery/BYSevro.jpg",
+      date: "2024"
+    },
+    {
+      id: 9,
+      title: "BySevro2",
+      description: "Another community creation by Sevro",
+      image: "/gallery/BySevro2.jpg",
+      date: "2024"
     }
   ]
 
