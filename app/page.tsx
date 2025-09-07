@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Breath in Boi</title>
+        <title>Breathe in Boi</title>
         <meta name="description" content="breath in boi - The most legendary memecoin inspired by Spongebob Squarepants" />
       </Head>
 
