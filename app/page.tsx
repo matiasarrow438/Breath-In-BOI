@@ -84,7 +84,7 @@ export default function Home() {
     <>
       <Head>
         <title>Breathe in Boi</title>
-        <meta name="description" content="breath in boi - The most legendary memecoin inspired by Spongebob Squarepants" />
+        <meta name="description" content="breathe in boi - The most legendary memecoin inspired by Spongebob Squarepants" />
       </Head>
 
                    {/* TikTok Popup */}
@@ -94,7 +94,7 @@ export default function Home() {
                    <div className="text-yellow-100">
                      <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-yellow-400">TikTok Viral</h3>
                      <p className="text-sm sm:text-base leading-relaxed">
-                       You can't go on TikTok without seeing breath in boi memes in the comments!
+                       You can't go on TikTok without seeing breathe in boi memes in the comments!
                      </p>
                    </div>
                  </div>
@@ -163,7 +163,7 @@ export default function Home() {
                 className="w-24 h-24 cool-gif"
               />
               <span className="bubble-font">
-                Breath in Boi
+                Breathe in Boi
               </span>
               <img 
                 key={`gif-right-${gifKey}`}
@@ -173,7 +173,7 @@ export default function Home() {
               />
             </h1>
                                <p className="text-lg md:text-xl text-yellow-200 max-w-2xl mx-auto mb-4 description-outline">
-                     Breath in boi started as a Spongebob meme that was so stupid it was funny. 
+                     Breathe in boi started as a Spongebob meme that was so stupid it was funny. 
                      People never forgot it and they never will.
                    </p>
             <p className={`font-bold mb-8 click-anywhere-text ${clickCount >= 10 ? 'text-sm md:text-base' : 'text-lg md:text-xl'}`} style={{ color: '#fbbf24' }}>
