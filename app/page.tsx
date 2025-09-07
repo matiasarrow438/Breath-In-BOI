@@ -12,7 +12,7 @@ export default function Home() {
   const [showTikTokPopup, setShowTikTokPopup] = useState(false)
   const [clickCount, setClickCount] = useState(0)
 
-  const contractAddress = "CA"
+  const contractAddress = "7BMgK7wAmWwbRHU1WYRLcmkvp5Qa5vS744eajycbpump"
   const soundEffects = ['/soundeffects/boom.mp3', '/soundeffects/BOI.m4a']
 
   // Force GIFs to reload and sync
@@ -203,7 +203,7 @@ export default function Home() {
         {/* Social Links */}
         <div className="flex gap-6 mt-8">
           <a 
-            href="https://x.com/i/communities/1964455966180856057/" 
+            href="https://x.com/i/communities/1964455966180856057" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
@@ -213,7 +213,7 @@ export default function Home() {
             </svg>
           </a>
           <a 
-            href="https://dexscreener.com/solana/breathinboi" 
+            href="https://dexscreener.com/solana/7BMgK7wAmWwbRHU1WYRLcmkvp5Qa5vS744eajycbpump" 
             target="_blank" 
             rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
